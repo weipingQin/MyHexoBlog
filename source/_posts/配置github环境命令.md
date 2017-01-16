@@ -1,3 +1,7 @@
+
+---
+title: 配置github博客
+---
 1.配置github: 先设置用户名和信息
 git config --global user.name "weipingQin"
 git config --global user.email "995308963@qq.com"

@@ -1,2 +1,6 @@
-{1} React_Native环境搭建
+---
+title: React_Native环境搭建 
+---
+
+
 

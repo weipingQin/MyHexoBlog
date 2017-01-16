@@ -1,3 +1,6 @@
+---
+title: 使用freeline增快AndroidStudio的编译速度
+---
 现在用AndroidStudio的时候 用Gradle进行项目构建实在是太慢了，据说蚂蚁金服出了一个freeline的构建会使得项目构建速度快很多，于是今天尝试了一下。
 
 1.首先很重要的是你必须要去配置你的AndroidSDK，千万不要忘记了，今天配置SDK的时候遇到了很坑的问题。

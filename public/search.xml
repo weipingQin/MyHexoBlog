@@ -1,0 +1,158 @@
+<?xml version="1.0" encoding="utf-8"?>
+<search>
+  
+  
+    
+    <entry>
+      <title><![CDATA[Hexo博客搭建常见问题]]></title>
+      <url>http://yoursite.com/2017/01/15/hexo%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA%E5%B8%B8%E8%A7%81%E9%97%AE%E9%A2%98/</url>
+      <content type="html"><![CDATA[<p>1.今天碰到了一个问题:hexo博客搭建的时候需要在:后面加一个空格[<a href="https://xuanwo.org/2014/08/14/hexo-usual-problem/" target="_blank" rel="external">https://xuanwo.org/2014/08/14/hexo-usual-problem/</a></p>
+<h2 id="2-给文章添加标题"><a href="#2-给文章添加标题" class="headerlink" title="2.给文章添加标题:"></a>2.给文章添加标题:</h2><h2 id="title-XXX"><a href="#title-XXX" class="headerlink" title="title:XXX"></a>title:XXX</h2><p>设置标题 </p>
+<p>注意:别忘记 title: 冒号后面有空格 </p>
+]]></content>
+    </entry>
+    
+    <entry>
+      <title><![CDATA[Hello World]]></title>
+      <url>http://yoursite.com/2017/01/15/hello-world/</url>
+      <content type="html"><![CDATA[<p>Welcome to <a href="https://hexo.io/" target="_blank" rel="external">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="external">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="external">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="external">GitHub</a>.</p>
+<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo new <span class="string">"My New Post"</span></div></pre></td></tr></table></figure>
+<p>More info: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="external">Writing</a></p>
+<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo server</div></pre></td></tr></table></figure>
+<p>More info: <a href="https://hexo.io/docs/server.html" target="_blank" rel="external">Server</a></p>
+<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo generate</div></pre></td></tr></table></figure>
+<p>More info: <a href="https://hexo.io/docs/generating.html" target="_blank" rel="external">Generating</a></p>
+<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo deploy</div></pre></td></tr></table></figure>
+<p>More info: <a href="https://hexo.io/docs/deployment.html" target="_blank" rel="external">Deployment</a></p>
+]]></content>
+    </entry>
+    
+    <entry>
+      <title><![CDATA[代码规范]]></title>
+      <url>http://yoursite.com/2017/01/14/%E4%BB%A3%E7%A0%81%E8%A7%84%E8%8C%83/</url>
+      <content type="html"><![CDATA[<p>同事在项目中指出了很多代码规范的问题，很值得引起重视:</p>
+<p>有些逻辑是业务模块的话，不要写在公共的utils里面，另外变量命名也要规范起来，不要随意命名。1、全局变量首字母已m开头，数据bean除外。<br>2、静态变量全部大写已S开头，单词间采用下划线分隔。<br>3、局部变量首字母小写。<br>4、全局变量和局部变量变量采用驼峰法，尽量简洁功能明确。</p>
+]]></content>
+    </entry>
+    
+    <entry>
+      <title><![CDATA[开发经验汇总]]></title>
+      <url>http://yoursite.com/2017/01/13/%E5%BC%80%E5%8F%91%E7%BB%8F%E9%AA%8C/</url>
+      <content type="html"><![CDATA[<p>1.时间转化中的一个小细节 传入的值是int 需要转化成long类型不能直接修改相应的函数<br>也是一个习惯 理解的到位<br>比如 a * 1000L 转化成long类型 </p>
+<p>2.分支合并和创建的时候需要注意 符合git-flow的规范。比如我在/release_版本号/下需要修改某个bug 那可以在改分支的底部再去建立一个debug分支，需要你把你的debug分支merge到release下的某一个版本号下去。然后去删除掉该版本下对应的debug子分支。这样做的一个好处是也使得代码更加的规范化 </p>
+<p>3.开发中遇到的问题和解决方案:<br>今天开发中遇到比较多的问题<br>1.在开发相关滑动的折叠ToolBar的问题时，使用了ToolBarLayout和CoordinatorLayout应该是一个控制器，用来控制他内部的相关子View。作为顶层布局。协调子布局的相关联动。<br>在使用的时候使用字符串app:layout_behavior=”@string/appbar_scrolling_view_behavior”该字符串对应的是 AppBarLayout.ScrollingViewBehavior.<br>Layout behavor<br>一般的情况都是ToolBar需要进行相应的折叠，但是我自己的项目中遇到的问题是如何让ToollBar固定，但是下面的那一个List进行滑动。后来我想折叠的是上面的那块Toolbar，于是可以反过来，设置layout_behavior为滚动。参考资料:[<a href="http://www.jianshu.com/p/7caa5f4f49bd" target="_blank" rel="external">http://www.jianshu.com/p/7caa5f4f49bd</a>] </p>
+<p>解决Toolbar固定不动的问题:解决这个问题的时候 只要设置下面的View的 layout_behavor<br>app:layout_scrollFlags=”scroll|exitUntilCollapsed”设置成滚动状态就OK了</p>
+<p>4.设置app:layout_behavor的时候应该注意，只有是CoordinatorLayout的直接子View才能启到相应的作用否则设置滚动事没有任何作用的。</p>
+<p>5.在设置布局的时候 ，需要让RecycleView进行滚动，这个时候需要在RecycleView的外面包ScrollView。当然还有一个下来刷新的SwipeRefreshLayout 需要嵌套在ScrollView的外面。当然这一堆是事件冲突处理也是很麻烦的。所以最好使用NestedScrollView 谷歌已经帮你处理好了相应的事件</p>
+<p>6.参考资料:[<a href="http://crazyandcoder.github.io/2016/07/18/android%20%E7%96%91%E9%9A%BE%E6%9D%82%E7%97%87%E2%80%94NestedScrollView%20%E5%B5%8C%E5%A5%97%20RecyclerView%E6%BB%91%E5%8A%A8%E5%8D%A1%E9%A1%BF%E9%97%AE%E9%A2%98/]NestedScrollView嵌套RecycleView滑动卡顿问题" target="_blank" rel="external">http://crazyandcoder.github.io/2016/07/18/android%20%E7%96%91%E9%9A%BE%E6%9D%82%E7%97%87%E2%80%94NestedScrollView%20%E5%B5%8C%E5%A5%97%20RecyclerView%E6%BB%91%E5%8A%A8%E5%8D%A1%E9%A1%BF%E9%97%AE%E9%A2%98/]NestedScrollView嵌套RecycleView滑动卡顿问题</a> </p>
+<p>7.今天还有一个问题：我将RecycleView放到NestedScrollView里面去之后，发现RecycleView只显示了其中的第一条数据。于是你可以将LayoutManager进行重写，指定一个LayoutManager放到RecycleView去。[<a href="http://www.cnblogs.com/woaixingxing/p/6098726.html" target="_blank" rel="external">http://www.cnblogs.com/woaixingxing/p/6098726.html</a>]</p>
+<p>8 重写布局的过程中还碰到了崩溃 Java.lang.IndexOutOfBoundsException.这是由于SwipeRefreshLayout嵌套在RecycleView里面导致的问题。</p>
+<p>9项目中碰到了很多的事件冲突导致的问题：我自己自定义写了一个可以折叠的GridView。折叠的时候发现，当我点击加载更多的时候，发现：这个GridView无法折叠了。原因是GridView嵌套在NestedScrollView 事件是由他的父容器向子容器去传递的，现在父容器消费掉了这个滑动的事件，子容器也就得不到相应了。那就必须把这个事件拦截处理掉。</p>
+<p>=======================</p>
+<p>2017-1-10<br>今日开发总结 今天主要在开发NestedScrollView 嵌套RecycleView的时候碰到了一些事件点击问题<br>1.当自己写的一个自定义的组件的UI和RecycleView组合起来嵌套在NestedScrollView里，发现点击不了RecycleView的每一个item。后来查找原因找到了原来点击事件有问题：不应该在onCreateViewHolder中 应该在onBindViewHolder中注册 </p>
+<p>2.使用cardView来代替直接写一个带有shape.xml做背景的View。这样的好处显而易见：shae.xml要写一堆很难管理和维护，但是cardView直接可以设置圆角而且又是系统推荐的方式，那何乐而不为呢。当然用一个组件他有优点肯定也有缺点。</p>
+<p>3.注意：RecycleView进行监听每一个item的注册事件的时候，需要单独的去写一个监听的接口来实现，而并不能像ListView那样setOnItemClickListener。</p>
+<p>4.设置透明的Toolbar的时候，其实需要注意的一点是:其实自定义来写整个Layout的时候 可以在外包一层AppLayout然后设置这个layout的backgroud就可以了 </p>
+<p>5.还有一个小的细节点:我从别人那边合并分支了之后，碰到RecyleView的那个包导入了但是没法编译了，其实是工具的使用问题:在顶部有一个try-again 然后点击菜单中的run-make model 再make project 就好了。</p>
+<p>6.今天同事有提到：在做UI开发的时候应该需要按照标准去实施，然后让UI的同事去提测。不要自己去用自己的标准去做。这样以后调试会很麻烦。看不懂Sketch就要问。然后测试的时候千万别忘记用低分辨率的手机也去测试一下，不要留下任何的问题。把事情做的完美。</p>
+<p>7.图片的资源文件应该压缩一下[<a href="https://tinypng.com/" target="_blank" rel="external">https://tinypng.com/</a>] 压缩的时候要注意这个工具只能传20张图片，不要重复压缩或者这个细节没注意到压缩了两次或者漏掉压缩</p>
+<p>8.其实每天都可以发现 做了很多重复的劳动：将RecycleView做成一个模板 参考资料:<br>[<a href="http://www.jianshu.com/p/e8ac0c284601" target="_blank" rel="external">http://www.jianshu.com/p/e8ac0c284601</a>]</p>
+<p>9.RecycleView资料[<a href="http://blog.csdn.net/dl10210950/article/details/52918019" target="_blank" rel="external">http://blog.csdn.net/dl10210950/article/details/52918019</a>]</p>
+<p>============================================================================</p>
+<p>2017-1-12 开发经验汇总<br>1.今天遇到在ScrollView里面嵌套一个View和RecycleView的时候，下面的RecycleView会把上面的View枪战掉，导致把整块View上推。原因：因为RecycleView把ScollView的焦点抢占掉了。导致RecycleView获取了焦点。这个问题和一个EditText获取了焦点会自动弹出软键盘一样的道理：当时是让EditText的父容器获取焦点。<br>【解决方案】：当使用EditText的时候 会自动弹出软键盘 影响客户体验 这个时候让父容器获得焦点就可以完美解决这个问题<br>android:focusable=”true”<br>android:focusableInTouchMode=”true” </p>
+<p>2.开发技巧:每次类很多的情况下一个个找非常繁琐：可以按2下Shift键,然后查找，再在左侧的菜单栏去选择那个小圆圈的按钮。可以直接定位到相关的页面上去。</p>
+<p>==============================================================================</p>
+<p>2017-1-13 开发经验汇总 </p>
+<p>1.整理资源包的时候:首先去master上去更新代码，更新到最新的代码。然后在新建一个teststring分支，将Master上的代码合并上去，接着将最新的资源文件去替换，删除掉多余的别的国家的语言资源包，如果少了文字将编译不通过。然后补充。接着再切换到master分支补充完整,将teststring分支删除掉 </p>
+<p>2.资源打包:打开build菜单栏———&gt;选择Select Build Variants 其中打包tuyasmart 里的有一个 Build Variant 选择 onLineRelease Debug和Release的区别就是证书不一样 点击build生成apk文件 apk的路径在项目名称下—-build —-outputs </p>
+<p>===============================================================================</p>
+<p>2017-1-14 开发经验总结 </p>
+<p>1.实现一个功能:显示离线设备的数量，可以在MVP的View接口上定义一个方法，然后以回调的形式去拿到他，刷新UI。不要去定义一个全局变量，这样会导致很多问题。不要以设置变量，将逻辑处理完之后，主页Fragment或者Activity直接拿到回调，然后刷新UI。</p>
+<p>2.AppBarLayout会出现阴影的效果，影响UI的开发体验。在AppBarLayout中增加标签:<br>app:elevation = “0dp”达到了适配的效果。<br>参考资料[<a href="http://blog.csdn.net/dreamsever/article/details/52672739" target="_blank" rel="external">http://blog.csdn.net/dreamsever/article/details/52672739</a>]</p>
+<p>3.可以将变量用%d一串字符来表示 使用String.format()的方式 注意占位符是在后面的 不要搞错 %d表示的是数字 %s是字符 </p>
+<p>===============================================================================</p>
+<p>2017-1-16开发经验总结<br>1.今天发现在NestedScrollView中嵌套RecycleView导致了滑动的冲突，效率很低。这个时候需要去实现另外一套解决方案。发现在Adapter扩展</p>
+]]></content>
+    </entry>
+    
+    <entry>
+      <title><![CDATA[VIM使用技巧]]></title>
+      <url>http://yoursite.com/2017/01/12/VIM%E4%BD%BF%E7%94%A8%E6%8A%80%E5%B7%A7/</url>
+      <content type="html"><![CDATA[<p>1.插入字符 {i a o O I A}<br>{i 在光标左侧插入正文<br> a 在光标右侧插入正文<br> o 在光标所在行的下一行添加新行<br> O 在光标所在行的上一行添加新行<br> I 在光标所在行的开头插入<br> A 在光标所在行的末尾插入}</p>
+<p>2.退出模式: ESC </p>
+<p>3.搜索模式: /  【使用/进行搜索】</p>
+<p>相关资料补充:使用VIM打造IDE[<a href="http://blog.csdn.net/wooin/article/details/1858917" target="_blank" rel="external">http://blog.csdn.net/wooin/article/details/1858917</a>]</p>
+<p>4.跳转到文章的最后一行操作:shift+G 跳转最后一行,按下O在最后一行的下一行插入 </p>
+]]></content>
+    </entry>
+    
+    <entry>
+      <title><![CDATA[使用freeline增快AndroidStudio的编译速度]]></title>
+      <url>http://yoursite.com/2017/01/07/%E4%BD%BF%E7%94%A8Freeline%E6%8F%90%E9%AB%98%E7%BC%96%E8%AF%91%E6%95%88%E7%8E%87/</url>
+      <content type="html"><![CDATA[<p>现在用AndroidStudio的时候 用Gradle进行项目构建实在是太慢了，据说蚂蚁金服出了一个freeline的构建会使得项目构建速度快很多，于是今天尝试了一下。</p>
+<p>1.首先很重要的是你必须要去配置你的AndroidSDK，千万不要忘记了，今天配置SDK的时候遇到了很坑的问题。<br>出现了问题：<br><code>mac 配置环境变量出现export</code>=’ not a valid identifier<code>`解决方法：很简单，原来是配置SDK的时候 = 左右两边多了空格</code><br>2.freeline首先要进行初始化 freeline init 提示配置失败需要升级到./gradlew initFreeline<br>3.<code>编译找不到project_description.json文件</code><br><code>解决方法:执行 ./gradlew checkBeforeCleanBuild</code><br>4.<code>下载更新的时候一直显示0%</code><br><code>使用命令  gradle initFreeline -Pmirror (建议直接使用这个) 加上这个参数 -Pmirror优先访问国内的镜像</code><br>5.第一次编译的时候全量编译<br><code>python freeline.py -f</code><br>6.调试应用的时候 使用<br><code>python freeline.py -d</code><br>7.参考资料[<a href="http://www.jianshu.com/p/46418dd38218" target="_blank" rel="external">http://www.jianshu.com/p/46418dd38218</a>]</p>
+]]></content>
+    </entry>
+    
+    <entry>
+      <title><![CDATA[开发中的小习惯]]></title>
+      <url>http://yoursite.com/2017/01/05/%E5%BC%80%E5%8F%91%E4%B8%AD%E7%94%9F%E6%B4%BB%E4%B8%AD%E7%9A%84%E5%B0%8F%E4%B9%A0%E6%83%AF/</url>
+      <content type="html"><![CDATA[<p>开发中养成一些小的习惯可以节省很多的时间<br>1.比如我们在发送代码文件的时候，把build文件删除掉再发给别人，这样可以使得安装包边的很小 很容易传输 而且不会造成编中不兼容的问题</p>
+<p>2.</p>
+]]></content>
+    </entry>
+    
+    <entry>
+      <title><![CDATA[Markdown常用语法]]></title>
+      <url>http://yoursite.com/2017/01/05/markdown%E5%B8%B8%E7%94%A8%E8%AF%AD%E6%B3%95%E5%9B%9E%E9%A1%BE/</url>
+      <content type="html"><![CDATA[<p>由于现在公司要主导推技术分享和相关博客的整理，所以就回顾一下markdown语言 </p>
+<ol>
+<li>标题的定义 # 一级标题 ## 二级标题 ### 三级标题 </li>
+<li><blockquote>
+<p>表示引用文字 </p>
+</blockquote>
+</li>
+<li>图片与链接【重点】 <img src="{ImgCap}{/ImgCap}" alt=""><br>链接 <a href=""></a> 比如插入一个图片 <img src="http://mouapp.com/Mou_128.png" alt="Mou icon"><br>4.表格比较麻烦<br>| Tables        | Are           | Cool  |<br>| ————- |:————-:| —–:|<br>| col 3 is      | right-aligned | $1600 |<br>| col 2 is      | centered      |   $12 |<br>| zebra stripes | are neat      |    $1 |</li>
+</ol>
+<p>5代码框去引用代码，使用`` 包含起来就OK<br>6.使用<em>表示列表,例如 </em><a href="http://baidu.com" target="_blank" rel="external">小众软件</a> 其实对应的HTML语法就是 <li><a href="www.baidu.com">小众软件</a></li></p>
+]]></content>
+    </entry>
+    
+    <entry>
+      <title><![CDATA[搭建Hexo博客中遇到的问题]]></title>
+      <url>http://yoursite.com/2017/01/04/%E5%A6%82%E4%BD%95%E6%90%AD%E5%BB%BAgithub%E5%8D%9A%E5%AE%A2/</url>
+      <content type="html"><![CDATA[<p>搭建github博客采用hexo来搭建静态博客</p>
+<p>参考资料[<a href="https://wsgzao.github.io/post/hexo-guide/#了解Hexo" target="_blank" rel="external">https://wsgzao.github.io/post/hexo-guide/#了解Hexo</a>]</p>
+<p>2.安装Hexo<br>npm install hexo-cli -g<br>npm install hexo hexo –save</p>
+<p>3.初始化hexo<br>$ hexo init <folder><br>$ cd <folder><br>$ npm install</folder></folder></p>
+<p>4.预览 hexo server 成功之后可以登录 localhost:4000</p>
+<p>5.简写命令<br> hexo n 生成文章<br> hexo s 本地发布预览效果<br> hexo g 生成public 静态文件</p>
+<p>6.我喜欢用我自己觉得喜欢的样式来进行装饰<br> 使用方法参考[<a href="http://moxfive.coding.me/yelee/1.Getting-Started/i18n.html" target="_blank" rel="external">http://moxfive.coding.me/yelee/1.Getting-Started/i18n.html</a>]</p>
+<p>要点:1.首先 git clone 下来主题<br>2.重点的重点：需要配置 _config.yml 需要指定theme的来源<br>然后要执行 这个命令 hexo clean &amp;&amp; hexo s 不要忘记</p>
+<p>在github上建立一个仓库 username.github.io为仓库名<br>然后切换到所在的博客的目录下使用命令hexo g 生成public文件夹 </p>
+<p>【重点】特别注意生成了public文件夹之后 你需要将public文件夹下面的所有的静态资源文件放入到刚才建立的仓库下去 然后提交到github仓库上去<br>访问的URL[weipingQin.github.io]</p>
+<p><a href="http://moxfive.coding.me/yelee/1.Getting-Started/i18n.html" target="_blank" rel="external">http://moxfive.coding.me/yelee/1.Getting-Started/i18n.html</a></p>
+]]></content>
+    </entry>
+    
+    <entry>
+      <title><![CDATA[React_Native环境搭建]]></title>
+      <url>http://yoursite.com/2017/01/04/React_native%E5%AD%A6%E4%B9%A0/</url>
+      <content type="html"></content>
+    </entry>
+    
+    <entry>
+      <title><![CDATA[配置Github博客]]></title>
+      <url>http://yoursite.com/2017/01/04/%E9%85%8D%E7%BD%AEgithub%E7%8E%AF%E5%A2%83%E5%91%BD%E4%BB%A4/</url>
+      <content type="html"><![CDATA[<p>1.配置github: 先设置用户名和信息<br>git config –global user.name “weipingQin”<br>git config –global user.email “995308963@qq.com”</p>
+<p>2.生成key命令<br>ssh-keygen -t rsa -C “995308963@qq.com”</p>
+<p>3.非常重要的一点:将本地的密钥识别<br>ssh-add ~/.ssh/id_github_rsa</p>
+<p>4.执行命令 看是否识别<br>ssh -T git@github.com</p>
+<p>5.出现 welcome to Git@github 表示成功 </p>
+<p>6.其他资料[<a href="http://www.jianshu.com/p/fbbf6efb50ba" target="_blank" rel="external">http://www.jianshu.com/p/fbbf6efb50ba</a>]</p>
+]]></content>
+    </entry>
+    
+  
+  
+</search>
