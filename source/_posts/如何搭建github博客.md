@@ -1,6 +1,7 @@
 ---
 title: 搭建hexo博客中遇到的问题
 ---
+
 搭建github博客采用hexo来搭建静态博客
 
 参考资料[https://wsgzao.github.io/post/hexo-guide/#了解Hexo]

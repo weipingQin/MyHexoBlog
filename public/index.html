@@ -259,6 +259,144 @@
 </nav>
       <div class="body-wrap">
   
+    <article id="post-Gradle工具学习" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2017/01/25/Gradle工具学习/" class="article-date">
+      <time datetime="2017-01-25T13:22:24.000Z" itemprop="datePublished">2017-01-25</time>
+</a>
+
+
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+          
+        
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+
+      
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+
+
+  
+    <article id="post-开发经验" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2017/01/22/开发经验/" class="article-date">
+      <time datetime="2017-01-21T16:22:21.000Z" itemprop="datePublished">2017-01-22</time>
+</a>
+
+
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2017/01/22/开发经验/">开发经验汇总</a>
+    </h1>
+  
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+          
+        <p>1.时间转化中的一个小细节 传入的值是int 需要转化成long类型不能直接修改相应的函数<br>也是一个习惯 理解的到位<br>比如 a * 1000L 转化成long类型 </p>
+<p>2.分支合并和创建的时候需要注意 符合git-flow的规范。比如我在/release_版本号/下需要修改某个bug 那可以在改分支的底部再去建立一个debug分支，需要你把你的debug分支merge到release下的某一个版本号下去。然后去删除掉该版本下对应的debug子分支。这样做的一个好处是也使得代码更加的规范化 </p>
+<p>3.开发中遇到的问题和解决方案:<br>今天开发中遇到比较多的问题<br>1.在开发相关滑动的折叠ToolBar的问题时，使用了ToolBarLayout和CoordinatorLayout应该是一个控制器，用来控制他内部的相关子View。作为顶层布局。协调子布局的相关联动。<br>在使用的时候使用字符串app:layout_behavior=”@string/appbar_scrolling_view_behavior”该字符串对应的是 AppBarLayout.ScrollingViewBehavior.<br>Layout behavor<br>一般的情况都是ToolBar需要进行相应的折叠，但是我自己的项目中遇到的问题是如何让ToollBar固定，但是下面的那一个List进行滑动。后来我想折叠的是上面的那块Toolbar，于是可以反过来，设置layout_behavior为滚动。参考资料:[<a href="http://www.jianshu.com/p/7caa5f4f49bd" target="_blank" rel="external">http://www.jianshu.com/p/7caa5f4f49bd</a>] </p>
+<p>解决Toolbar固定不动的问题:解决这个问题的时候 只要设置下面的View的 layout_behavor<br>app:layout_scrollFlags=”scroll|exitUntilCollapsed”设置成滚动状态就OK了</p>
+<p>4.设置app:layout_behavor的时候应该注意，只有是CoordinatorLayout的直接子View才能启到相应的作用否则设置滚动事没有任何作用的。</p>
+<p>5.在设置布局的时候 ，需要让RecycleView进行滚动，这个时候需要在RecycleView的外面包ScrollView。当然还有一个下来刷新的SwipeRefreshLayout 需要嵌套在ScrollView的外面。当然这一堆是事件冲突处理也是很麻烦的。所以最好使用NestedScrollView 谷歌已经帮你处理好了相应的事件</p>
+<p>6.参考资料:[<a href="http://crazyandcoder.github.io/2016/07/18/android%20%E7%96%91%E9%9A%BE%E6%9D%82%E7%97%87%E2%80%94NestedScrollView%20%E5%B5%8C%E5%A5%97%20RecyclerView%E6%BB%91%E5%8A%A8%E5%8D%A1%E9%A1%BF%E9%97%AE%E9%A2%98/]NestedScrollView嵌套RecycleView滑动卡顿问题" target="_blank" rel="external">http://crazyandcoder.github.io/2016/07/18/android%20%E7%96%91%E9%9A%BE%E6%9D%82%E7%97%87%E2%80%94NestedScrollView%20%E5%B5%8C%E5%A5%97%20RecyclerView%E6%BB%91%E5%8A%A8%E5%8D%A1%E9%A1%BF%E9%97%AE%E9%A2%98/]NestedScrollView嵌套RecycleView滑动卡顿问题</a> </p>
+<p>7.今天还有一个问题：我将RecycleView放到NestedScrollView里面去之后，发现RecycleView只显示了其中的第一条数据。于是你可以将LayoutManager进行重写，指定一个LayoutManager放到RecycleView去。[<a href="http://www.cnblogs.com/woaixingxing/p/6098726.html" target="_blank" rel="external">http://www.cnblogs.com/woaixingxing/p/6098726.html</a>]</p>
+<p>8 重写布局的过程中还碰到了崩溃 Java.lang.IndexOutOfBoundsException.这是由于SwipeRefreshLayout嵌套在RecycleView里面导致的问题。</p>
+<p>9项目中碰到了很多的事件冲突导致的问题：我自己自定义写了一个可以折叠的GridView。折叠的时候发现，当我点击加载更多的时候，发现：这个GridView无法折叠了。原因是GridView嵌套在NestedScrollView 事件是由他的父容器向子容器去传递的，现在父容器消费掉了这个滑动的事件，子容器也就得不到相应了。那就必须把这个事件拦截处理掉。</p>
+<p>=======================</p>
+<p>2017-1-10<br>今日开发总结 今天主要在开发NestedScrollView 嵌套RecycleView的时候碰到了一些事件点击问题<br>1.当自己写的一个自定义的组件的UI和RecycleView组合起来嵌套在NestedScrollView里，发现点击不了RecycleView的每一个item。后来查找原因找到了原来点击事件有问题：不应该在onCreateViewHolder中 应该在onBindViewHolder中注册 </p>
+<p>2.使用cardView来代替直接写一个带有shape.xml做背景的View。这样的好处显而易见：shae.xml要写一堆很难管理和维护，但是cardView直接可以设置圆角而且又是系统推荐的方式，那何乐而不为呢。当然用一个组件他有优点肯定也有缺点。</p>
+<p>3.注意：RecycleView进行监听每一个item的注册事件的时候，需要单独的去写一个监听的接口来实现，而并不能像ListView那样setOnItemClickListener。</p>
+<p>4.设置透明的Toolbar的时候，其实需要注意的一点是:其实自定义来写整个Layout的时候 可以在外包一层AppLayout然后设置这个layout的backgroud就可以了 </p>
+<p>5.还有一个小的细节点:我从别人那边合并分支了之后，碰到RecyleView的那个包导入了但是没法编译了，其实是工具的使用问题:在顶部有一个try-again 然后点击菜单中的run-make model 再make project 就好了。</p>
+<p>6.今天同事有提到：在做UI开发的时候应该需要按照标准去实施，然后让UI的同事去提测。不要自己去用自己的标准去做。这样以后调试会很麻烦。看不懂Sketch就要问。然后测试的时候千万别忘记用低分辨率的手机也去测试一下，不要留下任何的问题。把事情做的完美。</p>
+<p>7.图片的资源文件应该压缩一下[<a href="https://tinypng.com/" target="_blank" rel="external">https://tinypng.com/</a>] 压缩的时候要注意这个工具只能传20张图片，不要重复压缩或者这个细节没注意到压缩了两次或者漏掉压缩</p>
+<p>8.其实每天都可以发现 做了很多重复的劳动：将RecycleView做成一个模板 参考资料:<br>[<a href="http://www.jianshu.com/p/e8ac0c284601" target="_blank" rel="external">http://www.jianshu.com/p/e8ac0c284601</a>]</p>
+<p>9.RecycleView资料[<a href="http://blog.csdn.net/dl10210950/article/details/52918019" target="_blank" rel="external">http://blog.csdn.net/dl10210950/article/details/52918019</a>]</p>
+<p>============================================================================</p>
+<p>2017-1-12 开发经验汇总<br>1.今天遇到在ScrollView里面嵌套一个View和RecycleView的时候，下面的RecycleView会把上面的View枪战掉，导致把整块View上推。原因：因为RecycleView把ScollView的焦点抢占掉了。导致RecycleView获取了焦点。这个问题和一个EditText获取了焦点会自动弹出软键盘一样的道理：当时是让EditText的父容器获取焦点。<br>【解决方案】：当使用EditText的时候 会自动弹出软键盘 影响客户体验 这个时候让父容器获得焦点就可以完美解决这个问题<br>android:focusable=”true”<br>android:focusableInTouchMode=”true” </p>
+<p>2.开发技巧:每次类很多的情况下一个个找非常繁琐：可以按2下Shift键,然后查找，再在左侧的菜单栏去选择那个小圆圈的按钮。可以直接定位到相关的页面上去。</p>
+<p>==============================================================================</p>
+<p>2017-1-13 开发经验汇总 </p>
+<p>1.整理资源包的时候:首先去master上去更新代码，更新到最新的代码。然后在新建一个teststring分支，将Master上的代码合并上去，接着将最新的资源文件去替换，删除掉多余的别的国家的语言资源包，如果少了文字将编译不通过。然后补充。接着再切换到master分支补充完整,将teststring分支删除掉 </p>
+<p>2.资源打包:打开build菜单栏———&gt;选择Select Build Variants 其中打包tuyasmart 里的有一个 Build Variant 选择 onLineRelease Debug和Release的区别就是证书不一样 点击build生成apk文件 apk的路径在项目名称下—-build —-outputs </p>
+<p>===============================================================================</p>
+<p>2017-1-14 开发经验总结 </p>
+<p>1.实现一个功能:显示离线设备的数量，可以在MVP的View接口上定义一个方法，然后以回调的形式去拿到他，刷新UI。不要去定义一个全局变量，这样会导致很多问题。不要以设置变量，将逻辑处理完之后，主页Fragment或者Activity直接拿到回调，然后刷新UI。</p>
+<p>2.AppBarLayout会出现阴影的效果，影响UI的开发体验。在AppBarLayout中增加标签:<br>app:elevation = “0dp”达到了适配的效果。<br>参考资料[<a href="http://blog.csdn.net/dreamsever/article/details/52672739" target="_blank" rel="external">http://blog.csdn.net/dreamsever/article/details/52672739</a>]</p>
+<p>3.可以将变量用%d一串字符来表示 使用String.format()的方式 注意占位符是在后面的 不要搞错 %d表示的是数字 %s是字符 </p>
+<p>===============================================================================</p>
+<p>2017-1-16开发经验总结<br>1.今天发现在NestedScrollView中嵌套RecycleView导致了滑动的冲突，效率很低。这个时候需要去实现另外一套解决方案。发现在Adapter扩展</p>
+<p>===============================================================================</p>
+<p>2017-1-19开发经验<br>1.开发中有遇到RecycleView的headView设置的时候会出现布局设置了match_parent,实际在放到headView中的时候会遇到问题<br>[<a href="http://stackoverflow.com/questions/30691150/match-parent-width-does-not-work-in-recyclerview" target="_blank" rel="external">http://stackoverflow.com/questions/30691150/match-parent-width-does-not-work-in-recyclerview</a>]</p>
+<p>2017-1-21 开发经验<br>1.今天发现首页需要改一个布局的需求：首页在更改布局的时候，居然出现用CardView 在低版本上有个色块，需要去掉。找布局的原因不是很好找。有一个Android的工具AndroidMonitor。工具的不会使用导致了效率的下降。</p>
+<p>2.每次修改程序之后，都要编译会很慢。这个时候应该选择debug模式。在Android buildVariants里选择 Build Variant中的 PreviewDebug。这样每次都不会重新编译了。</p>
+<p>3.今天和领导聊到工作效率的问题：1.专业技能只能靠自己去提升基本功。包括数据结构，Java基础，自己去看thinking in java. 2.时间评估：将学习的时间也要评估进去。而且每一个细节都要抓的很紧，时间点的落实应该是落实到每一个细节中。整理归纳。时间的评估和需求的整理也是一个迭代的过程。本项目结束之后，需要总结整理，时间的漏洞在哪里。<br>下次制定目标时候，作为参考。当然自己在执行中严格把控好时间，若是到了第三个节点发现一个问题卡住了，应该及时去沟通交流。每月目标定制的时候，需要交流想法，执行中所遇到的坑多踩，多去总结。3.客户体验这一块，参考谷歌原生的APP，去做一次调研，APP的设计好处，交互流程。需要自定义组件。4.知识的提前储备：明年公司的业务主要偏向于摄像头和蓝牙两块重点知识提前储备。</p>
+
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+
+      
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+
+
+  
     <article id="post-hexo博客搭建常见问题" class="article article-type-post" itemscope itemprop="blogPost">
   
     <div class="article-meta">
@@ -412,95 +550,6 @@
           
         <p>同事在项目中指出了很多代码规范的问题，很值得引起重视:</p>
 <p>有些逻辑是业务模块的话，不要写在公共的utils里面，另外变量命名也要规范起来，不要随意命名。1、全局变量首字母已m开头，数据bean除外。<br>2、静态变量全部大写已S开头，单词间采用下划线分隔。<br>3、局部变量首字母小写。<br>4、全局变量和局部变量变量采用驼峰法，尽量简洁功能明确。</p>
-
-      
-    </div>
-    
-    <div class="article-info article-info-index">
-      
-      
-
-      
-      
-      <div class="clearfix"></div>
-    </div>
-    
-  </div>
-  
-</article>
-
-
-
-
-
-
-
-
-
-  
-    <article id="post-开发经验" class="article article-type-post" itemscope itemprop="blogPost">
-  
-    <div class="article-meta">
-      <a href="/2017/01/13/开发经验/" class="article-date">
-      <time datetime="2017-01-13T12:21:32.000Z" itemprop="datePublished">2017-01-13</time>
-</a>
-
-
-    </div>
-  
-  <div class="article-inner">
-    
-      <input type="hidden" class="isFancy" />
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2017/01/13/开发经验/">开发经验汇总</a>
-    </h1>
-  
-
-      </header>
-      
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-          
-        <p>1.时间转化中的一个小细节 传入的值是int 需要转化成long类型不能直接修改相应的函数<br>也是一个习惯 理解的到位<br>比如 a * 1000L 转化成long类型 </p>
-<p>2.分支合并和创建的时候需要注意 符合git-flow的规范。比如我在/release_版本号/下需要修改某个bug 那可以在改分支的底部再去建立一个debug分支，需要你把你的debug分支merge到release下的某一个版本号下去。然后去删除掉该版本下对应的debug子分支。这样做的一个好处是也使得代码更加的规范化 </p>
-<p>3.开发中遇到的问题和解决方案:<br>今天开发中遇到比较多的问题<br>1.在开发相关滑动的折叠ToolBar的问题时，使用了ToolBarLayout和CoordinatorLayout应该是一个控制器，用来控制他内部的相关子View。作为顶层布局。协调子布局的相关联动。<br>在使用的时候使用字符串app:layout_behavior=”@string/appbar_scrolling_view_behavior”该字符串对应的是 AppBarLayout.ScrollingViewBehavior.<br>Layout behavor<br>一般的情况都是ToolBar需要进行相应的折叠，但是我自己的项目中遇到的问题是如何让ToollBar固定，但是下面的那一个List进行滑动。后来我想折叠的是上面的那块Toolbar，于是可以反过来，设置layout_behavior为滚动。参考资料:[<a href="http://www.jianshu.com/p/7caa5f4f49bd" target="_blank" rel="external">http://www.jianshu.com/p/7caa5f4f49bd</a>] </p>
-<p>解决Toolbar固定不动的问题:解决这个问题的时候 只要设置下面的View的 layout_behavor<br>app:layout_scrollFlags=”scroll|exitUntilCollapsed”设置成滚动状态就OK了</p>
-<p>4.设置app:layout_behavor的时候应该注意，只有是CoordinatorLayout的直接子View才能启到相应的作用否则设置滚动事没有任何作用的。</p>
-<p>5.在设置布局的时候 ，需要让RecycleView进行滚动，这个时候需要在RecycleView的外面包ScrollView。当然还有一个下来刷新的SwipeRefreshLayout 需要嵌套在ScrollView的外面。当然这一堆是事件冲突处理也是很麻烦的。所以最好使用NestedScrollView 谷歌已经帮你处理好了相应的事件</p>
-<p>6.参考资料:[<a href="http://crazyandcoder.github.io/2016/07/18/android%20%E7%96%91%E9%9A%BE%E6%9D%82%E7%97%87%E2%80%94NestedScrollView%20%E5%B5%8C%E5%A5%97%20RecyclerView%E6%BB%91%E5%8A%A8%E5%8D%A1%E9%A1%BF%E9%97%AE%E9%A2%98/]NestedScrollView嵌套RecycleView滑动卡顿问题" target="_blank" rel="external">http://crazyandcoder.github.io/2016/07/18/android%20%E7%96%91%E9%9A%BE%E6%9D%82%E7%97%87%E2%80%94NestedScrollView%20%E5%B5%8C%E5%A5%97%20RecyclerView%E6%BB%91%E5%8A%A8%E5%8D%A1%E9%A1%BF%E9%97%AE%E9%A2%98/]NestedScrollView嵌套RecycleView滑动卡顿问题</a> </p>
-<p>7.今天还有一个问题：我将RecycleView放到NestedScrollView里面去之后，发现RecycleView只显示了其中的第一条数据。于是你可以将LayoutManager进行重写，指定一个LayoutManager放到RecycleView去。[<a href="http://www.cnblogs.com/woaixingxing/p/6098726.html" target="_blank" rel="external">http://www.cnblogs.com/woaixingxing/p/6098726.html</a>]</p>
-<p>8 重写布局的过程中还碰到了崩溃 Java.lang.IndexOutOfBoundsException.这是由于SwipeRefreshLayout嵌套在RecycleView里面导致的问题。</p>
-<p>9项目中碰到了很多的事件冲突导致的问题：我自己自定义写了一个可以折叠的GridView。折叠的时候发现，当我点击加载更多的时候，发现：这个GridView无法折叠了。原因是GridView嵌套在NestedScrollView 事件是由他的父容器向子容器去传递的，现在父容器消费掉了这个滑动的事件，子容器也就得不到相应了。那就必须把这个事件拦截处理掉。</p>
-<p>=======================</p>
-<p>2017-1-10<br>今日开发总结 今天主要在开发NestedScrollView 嵌套RecycleView的时候碰到了一些事件点击问题<br>1.当自己写的一个自定义的组件的UI和RecycleView组合起来嵌套在NestedScrollView里，发现点击不了RecycleView的每一个item。后来查找原因找到了原来点击事件有问题：不应该在onCreateViewHolder中 应该在onBindViewHolder中注册 </p>
-<p>2.使用cardView来代替直接写一个带有shape.xml做背景的View。这样的好处显而易见：shae.xml要写一堆很难管理和维护，但是cardView直接可以设置圆角而且又是系统推荐的方式，那何乐而不为呢。当然用一个组件他有优点肯定也有缺点。</p>
-<p>3.注意：RecycleView进行监听每一个item的注册事件的时候，需要单独的去写一个监听的接口来实现，而并不能像ListView那样setOnItemClickListener。</p>
-<p>4.设置透明的Toolbar的时候，其实需要注意的一点是:其实自定义来写整个Layout的时候 可以在外包一层AppLayout然后设置这个layout的backgroud就可以了 </p>
-<p>5.还有一个小的细节点:我从别人那边合并分支了之后，碰到RecyleView的那个包导入了但是没法编译了，其实是工具的使用问题:在顶部有一个try-again 然后点击菜单中的run-make model 再make project 就好了。</p>
-<p>6.今天同事有提到：在做UI开发的时候应该需要按照标准去实施，然后让UI的同事去提测。不要自己去用自己的标准去做。这样以后调试会很麻烦。看不懂Sketch就要问。然后测试的时候千万别忘记用低分辨率的手机也去测试一下，不要留下任何的问题。把事情做的完美。</p>
-<p>7.图片的资源文件应该压缩一下[<a href="https://tinypng.com/" target="_blank" rel="external">https://tinypng.com/</a>] 压缩的时候要注意这个工具只能传20张图片，不要重复压缩或者这个细节没注意到压缩了两次或者漏掉压缩</p>
-<p>8.其实每天都可以发现 做了很多重复的劳动：将RecycleView做成一个模板 参考资料:<br>[<a href="http://www.jianshu.com/p/e8ac0c284601" target="_blank" rel="external">http://www.jianshu.com/p/e8ac0c284601</a>]</p>
-<p>9.RecycleView资料[<a href="http://blog.csdn.net/dl10210950/article/details/52918019" target="_blank" rel="external">http://blog.csdn.net/dl10210950/article/details/52918019</a>]</p>
-<p>============================================================================</p>
-<p>2017-1-12 开发经验汇总<br>1.今天遇到在ScrollView里面嵌套一个View和RecycleView的时候，下面的RecycleView会把上面的View枪战掉，导致把整块View上推。原因：因为RecycleView把ScollView的焦点抢占掉了。导致RecycleView获取了焦点。这个问题和一个EditText获取了焦点会自动弹出软键盘一样的道理：当时是让EditText的父容器获取焦点。<br>【解决方案】：当使用EditText的时候 会自动弹出软键盘 影响客户体验 这个时候让父容器获得焦点就可以完美解决这个问题<br>android:focusable=”true”<br>android:focusableInTouchMode=”true” </p>
-<p>2.开发技巧:每次类很多的情况下一个个找非常繁琐：可以按2下Shift键,然后查找，再在左侧的菜单栏去选择那个小圆圈的按钮。可以直接定位到相关的页面上去。</p>
-<p>==============================================================================</p>
-<p>2017-1-13 开发经验汇总 </p>
-<p>1.整理资源包的时候:首先去master上去更新代码，更新到最新的代码。然后在新建一个teststring分支，将Master上的代码合并上去，接着将最新的资源文件去替换，删除掉多余的别的国家的语言资源包，如果少了文字将编译不通过。然后补充。接着再切换到master分支补充完整,将teststring分支删除掉 </p>
-<p>2.资源打包:打开build菜单栏———&gt;选择Select Build Variants 其中打包tuyasmart 里的有一个 Build Variant 选择 onLineRelease Debug和Release的区别就是证书不一样 点击build生成apk文件 apk的路径在项目名称下—-build —-outputs </p>
-<p>===============================================================================</p>
-<p>2017-1-14 开发经验总结 </p>
-<p>1.实现一个功能:显示离线设备的数量，可以在MVP的View接口上定义一个方法，然后以回调的形式去拿到他，刷新UI。不要去定义一个全局变量，这样会导致很多问题。不要以设置变量，将逻辑处理完之后，主页Fragment或者Activity直接拿到回调，然后刷新UI。</p>
-<p>2.AppBarLayout会出现阴影的效果，影响UI的开发体验。在AppBarLayout中增加标签:<br>app:elevation = “0dp”达到了适配的效果。<br>参考资料[<a href="http://blog.csdn.net/dreamsever/article/details/52672739" target="_blank" rel="external">http://blog.csdn.net/dreamsever/article/details/52672739</a>]</p>
-<p>3.可以将变量用%d一串字符来表示 使用String.format()的方式 注意占位符是在后面的 不要搞错 %d表示的是数字 %s是字符 </p>
-<p>===============================================================================</p>
-<p>2017-1-16开发经验总结<br>1.今天发现在NestedScrollView中嵌套RecycleView导致了滑动的冲突，效率很低。这个时候需要去实现另外一套解决方案。发现在Adapter扩展</p>
 
       
     </div>
@@ -807,61 +856,6 @@
 <p>【重点】特别注意生成了public文件夹之后 你需要将public文件夹下面的所有的静态资源文件放入到刚才建立的仓库下去 然后提交到github仓库上去<br>访问的URL[weipingQin.github.io]</p>
 <p><a href="http://moxfive.coding.me/yelee/1.Getting-Started/i18n.html" target="_blank" rel="external">http://moxfive.coding.me/yelee/1.Getting-Started/i18n.html</a></p>
 
-      
-    </div>
-    
-    <div class="article-info article-info-index">
-      
-      
-
-      
-      
-      <div class="clearfix"></div>
-    </div>
-    
-  </div>
-  
-</article>
-
-
-
-
-
-
-
-
-
-  
-    <article id="post-React_native学习" class="article article-type-post" itemscope itemprop="blogPost">
-  
-    <div class="article-meta">
-      <a href="/2017/01/04/React_native学习/" class="article-date">
-      <time datetime="2017-01-04T07:08:51.000Z" itemprop="datePublished">2017-01-04</time>
-</a>
-
-
-    </div>
-  
-  <div class="article-inner">
-    
-      <input type="hidden" class="isFancy" />
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2017/01/04/React_native学习/">React_Native环境搭建</a>
-    </h1>
-  
-
-      </header>
-      
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-          
-        
       
     </div>
     

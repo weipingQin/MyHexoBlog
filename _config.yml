@@ -43,10 +43,18 @@ highlight:
   auto_detect: false
   tab_replace:
 
+highlight_style:
+on: true
+code_block: 2
+inline_code: 1
+
 # Category & Tag
 default_category: uncategorized
 category_map:
 tag_map:
+
+toc:
+	on: true
 
 # Date / Time format
 ## Hexo uses Moment.js to parse and display date
@@ -69,3 +77,4 @@ theme: Yelee
 ## Docs: https://hexo.io/docs/deployment.html
 deploy:
   type:
+

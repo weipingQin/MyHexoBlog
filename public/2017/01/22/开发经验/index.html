@@ -19,11 +19,11 @@
 2.分支合并和创建的时候需要注意 符合git-flow的规范。比如我在/release_版本号/下需要修改某个bug 那可以在改分支的底部再去建立一个debug分支，需要你把你的debug分支merge到release下的某一个版本号下去">
 <meta property="og:type" content="article">
 <meta property="og:title" content="开发经验汇总">
-<meta property="og:url" content="http://yoursite.com/2017/01/13/开发经验/index.html">
+<meta property="og:url" content="http://yoursite.com/2017/01/22/开发经验/index.html">
 <meta property="og:site_name" content="Hexo">
 <meta property="og:description" content="1.时间转化中的一个小细节 传入的值是int 需要转化成long类型不能直接修改相应的函数也是一个习惯 理解的到位比如 a * 1000L 转化成long类型 
 2.分支合并和创建的时候需要注意 符合git-flow的规范。比如我在/release_版本号/下需要修改某个bug 那可以在改分支的底部再去建立一个debug分支，需要你把你的debug分支merge到release下的某一个版本号下去">
-<meta property="og:updated_time" content="2017-01-16T15:18:22.000Z">
+<meta property="og:updated_time" content="2017-01-21T16:22:21.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="开发经验汇总">
 <meta name="twitter:description" content="1.时间转化中的一个小细节 传入的值是int 需要转化成long类型不能直接修改相应的函数也是一个习惯 理解的到位比如 a * 1000L 转化成long类型 
@@ -262,8 +262,8 @@
       <div class="body-wrap"><article id="post-开发经验" class="article article-type-post" itemscope itemprop="blogPost">
   
     <div class="article-meta">
-      <a href="/2017/01/13/开发经验/" class="article-date">
-      <time datetime="2017-01-13T12:21:32.000Z" itemprop="datePublished">2017-01-13</time>
+      <a href="/2017/01/22/开发经验/" class="article-date">
+      <time datetime="2017-01-21T16:22:21.000Z" itemprop="datePublished">2017-01-22</time>
 </a>
 
 
@@ -329,6 +329,11 @@
 <p>3.可以将变量用%d一串字符来表示 使用String.format()的方式 注意占位符是在后面的 不要搞错 %d表示的是数字 %s是字符 </p>
 <p>===============================================================================</p>
 <p>2017-1-16开发经验总结<br>1.今天发现在NestedScrollView中嵌套RecycleView导致了滑动的冲突，效率很低。这个时候需要去实现另外一套解决方案。发现在Adapter扩展</p>
+<p>===============================================================================</p>
+<p>2017-1-19开发经验<br>1.开发中有遇到RecycleView的headView设置的时候会出现布局设置了match_parent,实际在放到headView中的时候会遇到问题<br>[<a href="http://stackoverflow.com/questions/30691150/match-parent-width-does-not-work-in-recyclerview" target="_blank" rel="external">http://stackoverflow.com/questions/30691150/match-parent-width-does-not-work-in-recyclerview</a>]</p>
+<p>2017-1-21 开发经验<br>1.今天发现首页需要改一个布局的需求：首页在更改布局的时候，居然出现用CardView 在低版本上有个色块，需要去掉。找布局的原因不是很好找。有一个Android的工具AndroidMonitor。工具的不会使用导致了效率的下降。</p>
+<p>2.每次修改程序之后，都要编译会很慢。这个时候应该选择debug模式。在Android buildVariants里选择 Build Variant中的 PreviewDebug。这样每次都不会重新编译了。</p>
+<p>3.今天和领导聊到工作效率的问题：1.专业技能只能靠自己去提升基本功。包括数据结构，Java基础，自己去看thinking in java. 2.时间评估：将学习的时间也要评估进去。而且每一个细节都要抓的很紧，时间点的落实应该是落实到每一个细节中。整理归纳。时间的评估和需求的整理也是一个迭代的过程。本项目结束之后，需要总结整理，时间的漏洞在哪里。<br>下次制定目标时候，作为参考。当然自己在执行中严格把控好时间，若是到了第三个节点发现一个问题卡住了，应该及时去沟通交流。每月目标定制的时候，需要交流想法，执行中所遇到的坑多踩，多去总结。3.客户体验这一块，参考谷歌原生的APP，去做一次调研，APP的设计好处，交互流程。需要自定义组件。4.知识的提前储备：明年公司的业务主要偏向于摄像头和蓝牙两块重点知识提前储备。</p>
 
       
     </div>
@@ -337,13 +342,13 @@
   
     
     <div class="copyright">
-        <p><span>本文标题:</span><a href="/2017/01/13/开发经验/">开发经验汇总</a></p>
+        <p><span>本文标题:</span><a href="/2017/01/22/开发经验/">开发经验汇总</a></p>
         <p><span>文章作者:</span><a href="/" title="回到主页">他山之石</a></p>
-        <p><span>发布时间:</span>2017-01-13, 20:21:32</p>
-        <p><span>最后更新:</span>2017-01-16, 23:18:22</p>
+        <p><span>发布时间:</span>2017-01-22, 00:22:21</p>
+        <p><span>最后更新:</span>2017-01-22, 00:22:21</p>
         <p>
-            <span>原始链接:</span><a class="post-url" href="/2017/01/13/开发经验/" title="开发经验汇总">http://yoursite.com/2017/01/13/开发经验/</a>
-            <span class="copy-path" data-clipboard-text="原文: http://yoursite.com/2017/01/13/开发经验/　　作者: 他山之石" title="点击复制文章链接"><i class="fa fa-clipboard"></i></span>
+            <span>原始链接:</span><a class="post-url" href="/2017/01/22/开发经验/" title="开发经验汇总">http://yoursite.com/2017/01/22/开发经验/</a>
+            <span class="copy-path" data-clipboard-text="原文: http://yoursite.com/2017/01/22/开发经验/　　作者: 他山之石" title="点击复制文章链接"><i class="fa fa-clipboard"></i></span>
             <script> var clipboard = new Clipboard('.copy-path'); </script>
         </p>
         <p>
@@ -356,15 +361,15 @@
     <nav id="article-nav">
         
             <div id="article-nav-newer" class="article-nav-title">
-                <a href="/2017/01/14/代码规范/">
-                    代码规范
+                <a href="/2017/01/25/Gradle工具学习/">
+                    
                 </a>
             </div>
         
         
             <div id="article-nav-older" class="article-nav-title">
-                <a href="/2017/01/12/VIM使用技巧/">
-                    VIM使用技巧
+                <a href="/2017/01/15/hexo博客搭建常见问题/">
+                    Hexo博客搭建常见问题
                 </a>
             </div>
         
@@ -432,7 +437,7 @@
 
     <div class="scroll" id="post-nav-button">
         
-            <a href="/2017/01/14/代码规范/" title="上一篇: 代码规范">
+            <a href="/2017/01/25/Gradle工具学习/" title="上一篇: ">
                 <i class="fa fa-angle-left"></i>
             </a>
         
@@ -440,13 +445,13 @@
         <a title="文章列表"><i class="fa fa-bars"></i><i class="fa fa-times"></i></a>
 
         
-            <a href="/2017/01/12/VIM使用技巧/" title="下一篇: VIM使用技巧">
+            <a href="/2017/01/15/hexo博客搭建常见问题/" title="下一篇: Hexo博客搭建常见问题">
                 <i class="fa fa-angle-right"></i>
             </a>
         
     </div>
 
-    <ul class="post-list"><li class="post-list-item"><a class="post-list-link" href="/2017/01/15/hexo博客搭建常见问题/">Hexo博客搭建常见问题</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/01/15/hello-world/">Hello World</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/01/14/代码规范/">代码规范</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/01/13/开发经验/">开发经验汇总</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/01/12/VIM使用技巧/">VIM使用技巧</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/01/07/使用Freeline提高编译效率/">使用freeline增快AndroidStudio的编译速度</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/01/05/开发中生活中的小习惯/">开发中的小习惯</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/01/05/markdown常用语法回顾/">Markdown常用语法</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/01/04/如何搭建github博客/">搭建Hexo博客中遇到的问题</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/01/04/React_native学习/">React_Native环境搭建</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/01/04/配置github环境命令/">配置Github博客</a></li></ul>
+    <ul class="post-list"><li class="post-list-item"><a class="post-list-link" href="/2017/01/25/Gradle工具学习/">Gradle工具学习</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/01/22/开发经验/">开发经验汇总</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/01/15/hexo博客搭建常见问题/">Hexo博客搭建常见问题</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/01/15/hello-world/">Hello World</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/01/14/代码规范/">代码规范</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/01/12/VIM使用技巧/">VIM使用技巧</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/01/07/使用Freeline提高编译效率/">使用freeline增快AndroidStudio的编译速度</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/01/05/开发中生活中的小习惯/">开发中的小习惯</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/01/05/markdown常用语法回顾/">Markdown常用语法</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/01/04/如何搭建github博客/">搭建Hexo博客中遇到的问题</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/01/04/配置github环境命令/">配置Github博客</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/01/04/React_native学习/">React_Native环境搭建</a></li></ul>
 
 
 
