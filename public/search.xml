@@ -4,6 +4,15 @@
   
     
     <entry>
+      <title><![CDATA[Android动画学习]]></title>
+      <url>http://yoursite.com/2017/01/29/Android%E5%8A%A8%E7%94%BB%E5%AD%A6%E4%B9%A0/</url>
+      <content type="html"><![CDATA[<p>1月的工作中有涉及到动画方面的知识，项目上线了，现在回顾和总结一下涉及到的动画知识和实际解决问题方面的经验。</p>
+<p>首先拿到两个小的需求：实现一个Wifi扫描效果动画和一个按钮动画。<br>效果如下图所示:</p>
+<p>首先分析一下这个动画的组成：<br>动画分两层:外层是一个放大的动画，内层是一个逐帧动画。外部不断的放大然后复原，内部是一个图片的轮换变化，内部的动画还包含一个渐变的过程。<br>内部的逐帧动画是由若干张图片构成，可以采用SVG的方式来进行加载，放到一个xml文件中去实现 </p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div></pre></td><td class="code"><pre><div class="line">&lt;?xml version=&quot;1.0&quot; encoding=&quot;utf-8&quot;?&gt;</div><div class="line">&lt;animation-list xmlns:android=&quot;http://schemas.android.com/apk/res/android&quot;</div><div class="line">    android:oneshot=&quot;false&quot;&gt;</div><div class="line"></div><div class="line">    &lt;item</div><div class="line">        android:drawable=&quot;@drawable/wifi_1&quot;</div><div class="line">        android:duration=&quot;400&quot; /&gt;</div><div class="line">    &lt;item</div><div class="line">        android:drawable=&quot;@drawable/wifi_2&quot;</div><div class="line">        android:fromAlpha = &quot;0.2&quot;</div><div class="line">        android:toAlpha = &quot;0.0&quot;</div><div class="line">        android:duration=&quot;400&quot; /&gt;</div><div class="line">    &lt;item</div><div class="line">        android:drawable=&quot;@drawable/wifi_3&quot;</div><div class="line">        android:fromAlpha = &quot;0.2&quot;</div><div class="line">        android:toAlpha = &quot;0.0&quot;</div><div class="line">        android:duration=&quot;400&quot; /&gt;</div><div class="line"></div><div class="line">    &lt;item</div><div class="line">        android:drawable=&quot;@drawable/wifi_4&quot;</div><div class="line">        android:fromAlpha = &quot;0.2&quot;</div><div class="line">        android:toAlpha = &quot;0.0&quot;</div><div class="line">        android:duration=&quot;400&quot; /&gt;</div><div class="line"></div><div class="line">&lt;/animation-list&gt;</div></pre></td></tr></table></figure>]]></content>
+    </entry>
+    
+    <entry>
       <title></title>
       <url>http://yoursite.com/2017/01/25/Gradle%E5%B7%A5%E5%85%B7%E5%AD%A6%E4%B9%A0/</url>
       <content type="html"></content>
@@ -130,6 +139,12 @@
     </entry>
     
     <entry>
+      <title><![CDATA[React_Native环境搭建]]></title>
+      <url>http://yoursite.com/2017/01/04/React_native%E5%AD%A6%E4%B9%A0/</url>
+      <content type="html"></content>
+    </entry>
+    
+    <entry>
       <title><![CDATA[搭建Hexo博客中遇到的问题]]></title>
       <url>http://yoursite.com/2017/01/04/%E5%A6%82%E4%BD%95%E6%90%AD%E5%BB%BAgithub%E5%8D%9A%E5%AE%A2/</url>
       <content type="html"><![CDATA[<p>搭建github博客采用hexo来搭建静态博客</p>
@@ -156,12 +171,6 @@
 <p>5.出现 welcome to Git@github 表示成功 </p>
 <p>6.其他资料[<a href="http://www.jianshu.com/p/fbbf6efb50ba" target="_blank" rel="external">http://www.jianshu.com/p/fbbf6efb50ba</a>]</p>
 ]]></content>
-    </entry>
-    
-    <entry>
-      <title><![CDATA[React_Native环境搭建]]></title>
-      <url>http://yoursite.com/2017/01/04/React_native%E5%AD%A6%E4%B9%A0/</url>
-      <content type="html"></content>
     </entry>
     
   
