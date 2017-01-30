@@ -139,12 +139,6 @@
     </entry>
     
     <entry>
-      <title><![CDATA[React_Native环境搭建]]></title>
-      <url>http://yoursite.com/2017/01/04/React_native%E5%AD%A6%E4%B9%A0/</url>
-      <content type="html"></content>
-    </entry>
-    
-    <entry>
       <title><![CDATA[搭建Hexo博客中遇到的问题]]></title>
       <url>http://yoursite.com/2017/01/04/%E5%A6%82%E4%BD%95%E6%90%AD%E5%BB%BAgithub%E5%8D%9A%E5%AE%A2/</url>
       <content type="html"><![CDATA[<p>搭建github博客采用hexo来搭建静态博客</p>
@@ -159,6 +153,12 @@
 <p>【重点】特别注意生成了public文件夹之后 你需要将public文件夹下面的所有的静态资源文件放入到刚才建立的仓库下去 然后提交到github仓库上去<br>访问的URL[weipingQin.github.io]</p>
 <p><a href="http://moxfive.coding.me/yelee/1.Getting-Started/i18n.html" target="_blank" rel="external">http://moxfive.coding.me/yelee/1.Getting-Started/i18n.html</a></p>
 ]]></content>
+    </entry>
+    
+    <entry>
+      <title><![CDATA[React_Native环境搭建]]></title>
+      <url>http://yoursite.com/2017/01/04/React_native%E5%AD%A6%E4%B9%A0/</url>
+      <content type="html"></content>
     </entry>
     
     <entry>
