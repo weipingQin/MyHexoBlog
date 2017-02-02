@@ -259,11 +259,11 @@
 </nav>
       <div class="body-wrap">
   
-    <article id="post-如何搭建github博客" class="article article-type-post" itemscope itemprop="blogPost">
+    <article id="post-markdown常用语法回顾" class="article article-type-post" itemscope itemprop="blogPost">
   
     <div class="article-meta">
-      <a href="/2017/01/04/如何搭建github博客/" class="article-date">
-      <time datetime="2017-01-04T07:08:51.000Z" itemprop="datePublished">2017-01-04</time>
+      <a href="/2017/01/05/markdown常用语法回顾/" class="article-date">
+      <time datetime="2017-01-04T16:15:48.000Z" itemprop="datePublished">2017-01-05</time>
 </a>
 
 
@@ -278,7 +278,7 @@
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2017/01/04/如何搭建github博客/">搭建Hexo博客中遇到的问题</a>
+      <a class="article-title" href="/2017/01/05/markdown常用语法回顾/">Markdown常用语法</a>
     </h1>
   
 
@@ -288,17 +288,16 @@
     <div class="article-entry" itemprop="articleBody">
       
           
-        <p>搭建github博客采用hexo来搭建静态博客</p>
-<p>参考资料[<a href="https://wsgzao.github.io/post/hexo-guide/#了解Hexo" target="_blank" rel="external">https://wsgzao.github.io/post/hexo-guide/#了解Hexo</a>]</p>
-<p>2.安装Hexo<br>npm install hexo-cli -g<br>npm install hexo hexo –save</p>
-<p>3.初始化hexo<br>$ hexo init <folder><br>$ cd <folder><br>$ npm install</folder></folder></p>
-<p>4.预览 hexo server 成功之后可以登录 localhost:4000</p>
-<p>5.简写命令<br> hexo n 生成文章<br> hexo s 本地发布预览效果<br> hexo g 生成public 静态文件</p>
-<p>6.我喜欢用我自己觉得喜欢的样式来进行装饰<br> 使用方法参考[<a href="http://moxfive.coding.me/yelee/1.Getting-Started/i18n.html" target="_blank" rel="external">http://moxfive.coding.me/yelee/1.Getting-Started/i18n.html</a>]</p>
-<p>要点:1.首先 git clone 下来主题<br>2.重点的重点：需要配置 _config.yml 需要指定theme的来源<br>然后要执行 这个命令 hexo clean &amp;&amp; hexo s 不要忘记</p>
-<p>在github上建立一个仓库 username.github.io为仓库名<br>然后切换到所在的博客的目录下使用命令hexo g 生成public文件夹 </p>
-<p>【重点】特别注意生成了public文件夹之后 你需要将public文件夹下面的所有的静态资源文件放入到刚才建立的仓库下去 然后提交到github仓库上去<br>访问的URL[weipingQin.github.io]</p>
-<p><a href="http://moxfive.coding.me/yelee/1.Getting-Started/i18n.html" target="_blank" rel="external">http://moxfive.coding.me/yelee/1.Getting-Started/i18n.html</a></p>
+        <p>由于现在公司要主导推技术分享和相关博客的整理，所以就回顾一下markdown语言 </p>
+<ol>
+<li>标题的定义 # 一级标题 ## 二级标题 ### 三级标题 </li>
+<li><blockquote>
+<p>表示引用文字 </p>
+</blockquote>
+</li>
+<li>图片与链接【重点】 <img src="{ImgCap}{/ImgCap}" alt=""><br>链接 <a href=""></a> 比如插入一个图片 <img src="http://mouapp.com/Mou_128.png" alt="Mou icon"><br>4.表格比较麻烦<br>| Tables        | Are           | Cool  |<br>| ————- |:————-:| —–:|<br>| col 3 is      | right-aligned | $1600 |<br>| col 2 is      | centered      |   $12 |<br>| zebra stripes | are neat      |    $1 |</li>
+</ol>
+<p>5代码框去引用代码，使用`` 包含起来就OK<br>6.使用<em>表示列表,例如 </em><a href="http://baidu.com" target="_blank" rel="external">小众软件</a> 其实对应的HTML语法就是 <li><a href="www.baidu.com">小众软件</a></li></p>
 
       
     </div>
@@ -355,6 +354,72 @@
       
           
         
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+
+      
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+
+
+  
+    <article id="post-如何搭建github博客" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2017/01/04/如何搭建github博客/" class="article-date">
+      <time datetime="2017-01-04T07:08:51.000Z" itemprop="datePublished">2017-01-04</time>
+</a>
+
+
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2017/01/04/如何搭建github博客/">搭建Hexo博客中遇到的问题</a>
+    </h1>
+  
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+          
+        <p>搭建github博客采用hexo来搭建静态博客</p>
+<p>参考资料[<a href="https://wsgzao.github.io/post/hexo-guide/#了解Hexo" target="_blank" rel="external">https://wsgzao.github.io/post/hexo-guide/#了解Hexo</a>]</p>
+<p>2.安装Hexo<br>npm install hexo-cli -g<br>npm install hexo hexo –save</p>
+<p>3.初始化hexo<br>$ hexo init <folder><br>$ cd <folder><br>$ npm install</folder></folder></p>
+<p>4.预览 hexo server 成功之后可以登录 localhost:4000</p>
+<p>5.简写命令<br> hexo n 生成文章<br> hexo s 本地发布预览效果<br> hexo g 生成public 静态文件</p>
+<p>6.我喜欢用我自己觉得喜欢的样式来进行装饰<br> 使用方法参考[<a href="http://moxfive.coding.me/yelee/1.Getting-Started/i18n.html" target="_blank" rel="external">http://moxfive.coding.me/yelee/1.Getting-Started/i18n.html</a>]</p>
+<p>要点:1.首先 git clone 下来主题<br>2.重点的重点：需要配置 _config.yml 需要指定theme的来源<br>然后要执行 这个命令 hexo clean &amp;&amp; hexo s 不要忘记</p>
+<p>在github上建立一个仓库 username.github.io为仓库名<br>然后切换到所在的博客的目录下使用命令hexo g 生成public文件夹 </p>
+<p>【重点】特别注意生成了public文件夹之后 你需要将public文件夹下面的所有的静态资源文件放入到刚才建立的仓库下去 然后提交到github仓库上去<br>访问的URL[weipingQin.github.io]</p>
+<p><a href="http://moxfive.coding.me/yelee/1.Getting-Started/i18n.html" target="_blank" rel="external">http://moxfive.coding.me/yelee/1.Getting-Started/i18n.html</a></p>
+
       
     </div>
     
