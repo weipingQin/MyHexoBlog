@@ -15,13 +15,22 @@
 
 
 
+<meta name="description" content="解决的问题:国外推送无法推送到指定的手机 问题的原因:由于在国内GFW原因,目前采用的Umeng推送方案存在到达率问题。
+ 对现有主流的推送方案进行评估: (一)友盟推送: (1)原理: Umeng的推送机制是采用独立进程运行，兄弟App共享长连接方式。【手机中采用Umeng推送的APP可以共享Service】收取推送。
+ (2)存在的问题: 1.国外用户收不到推送:实际查看Umeng后台分析，">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Hexo">
-<meta property="og:url" content="http://yoursite.com/2017/01/25/Gradle工具学习/index.html">
+<meta property="og:title" content="国外推送方案的调研">
+<meta property="og:url" content="http://yoursite.com/2017/02/27/国外推送方案调研/index.html">
 <meta property="og:site_name" content="Hexo">
-<meta property="og:updated_time" content="2017-01-25T13:22:24.000Z">
+<meta property="og:description" content="解决的问题:国外推送无法推送到指定的手机 问题的原因:由于在国内GFW原因,目前采用的Umeng推送方案存在到达率问题。
+ 对现有主流的推送方案进行评估: (一)友盟推送: (1)原理: Umeng的推送机制是采用独立进程运行，兄弟App共享长连接方式。【手机中采用Umeng推送的APP可以共享Service】收取推送。
+ (2)存在的问题: 1.国外用户收不到推送:实际查看Umeng后台分析，">
+<meta property="og:updated_time" content="2017-02-27T12:21:19.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Hexo">
+<meta name="twitter:title" content="国外推送方案的调研">
+<meta name="twitter:description" content="解决的问题:国外推送无法推送到指定的手机 问题的原因:由于在国内GFW原因,目前采用的Umeng推送方案存在到达率问题。
+ 对现有主流的推送方案进行评估: (一)友盟推送: (1)原理: Umeng的推送机制是采用独立进程运行，兄弟App共享长连接方式。【手机中采用Umeng推送的APP可以共享Service】收取推送。
+ (2)存在的问题: 1.国外用户收不到推送:实际查看Umeng后台分析，">
 
 <link rel="apple-touch-icon" href= "/apple-touch-icon.png">
 
@@ -53,7 +62,7 @@
 <link href="//cdn.bootcss.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet">
 
 
-<title>Hexo</title>
+<title>国外推送方案的调研 | Hexo</title>
 
 <script src="//cdn.bootcss.com/jquery/2.2.4/jquery.min.js"></script>
 <script src="//cdn.bootcss.com/clipboard.js/1.5.10/clipboard.min.js"></script>
@@ -253,11 +262,11 @@
     </div>
     <link class="menu-list" tags="标签" friends="友情链接" about="关于我"/>
 </nav>
-      <div class="body-wrap"><article id="post-Gradle工具学习" class="article article-type-post" itemscope itemprop="blogPost">
+      <div class="body-wrap"><article id="post-国外推送方案调研" class="article article-type-post" itemscope itemprop="blogPost">
   
     <div class="article-meta">
-      <a href="/2017/01/25/Gradle工具学习/" class="article-date">
-      <time datetime="2017-01-25T13:22:24.000Z" itemprop="datePublished">2017-01-25</time>
+      <a href="/2017/02/27/国外推送方案调研/" class="article-date">
+      <time datetime="2017-02-27T05:56:41.000Z" itemprop="datePublished">2017-02-27</time>
 </a>
 
 
@@ -268,10 +277,36 @@
       <input type="hidden" class="isFancy" />
     
     
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      国外推送方案的调研
+    </h1>
+  
+
+      </header>
+      
+      <div class="article-info article-info-post">
+        
+
+        
+        <div class="clearfix"></div>
+      </div>
+      
+    
     <div class="article-entry" itemprop="articleBody">
       
           
-        
+        <p> 解决的问题:国外推送无法推送到指定的手机<br> 问题的原因:由于在国内GFW原因,目前采用的Umeng推送方案存在到达率问题。</p>
+<p> 对现有主流的推送方案进行评估:<br> (一)友盟推送:<br> (1)原理:<br> Umeng的推送机制是采用独立进程运行，兄弟App共享长连接方式。【手机中采用Umeng推送的APP可以共享Service】收取推送。</p>
+<p> (2)存在的问题:<br> 1.国外用户收不到推送:实际查看Umeng后台分析，发现国外用户推送到达率不高。可能由于Umeng服务器未覆盖到一些国家和相应的地区引起的原因。<br> 2.相关的测试结果来看，部分手机由于系统问题导致Service存活率情况不高。<br> 3.在service被杀死后有一定概率丢失消息,有一定延时率。</p>
+<p> (二)小米推送:<br> 之前在确定需求时，有提出第三世界的国家，例如:印度，他可能购买了中国的手机比如小米手机，还有一个情况：国产手机在国外使用的情况【Umeng解决】<br> (1)原理:采用系统长连接方式推送。只要系统不死，可以保证90%的推送到达率,原生和MIUI系统上有良好的存活率。<br> (2)此方案使用时候，需要看小米用户的数量来决定是否采用。</p>
+<p> (三)Google原生服务GCM【现已升级为FCM】<br> (1)原理:App服务器向GCM连接服务器发送HTTP/XMPP请求，GCM存储相关推送信息，并通过一个Token作为表示，并向注册了GCM服务的客户端推送特定消息。<br> (2)存在问题：FCM服务必须是在安装了googleplayServer才能正常运行。</p>
+<p> 综上分析:采用Umeng和Google FCM作为方案。针对国外的渠道，采用FCM推送，国内的渠道，采用Umeng推送。</p>
+<p> 有一个基于FCM的方案OneSignal[<a href="https://documentation.onesignal.com" target="_blank" rel="external">https://documentation.onesignal.com</a>] 他提供了一个管理后台，对APP对达到率,推送的延迟率，用户量等的数据统计服务。<br> 根据实际需求:后台单独会做相关的数据统计，所以不考虑此方案。<br> 需要思考的几个问题:<br> 1.FCM是否可以进行群推【查看相应的API】<br> 2.需要对推送的方案进行单独模块划分并配置<br> 3.客户端原先旧版升级到新版推送方案切换的问题。</p>
+<p> 客户端需要评估方案的集成：<br> 1.将推送部分分模块进行集成:其中涉及到，各个不同的模块对进行推送相关操作时候，需要添加相关的权限。单独在AndroidManifest.xml中配置会导致权限混乱。<br>  添加相关的权限时候，指定渠道名称，通过代码动态写入的方式。<br> 2.当然采用两种推送方案的时候，需要写一个管理类PushManager对推送方案进行判断:国外的手机并且安装了google play server的手机采用FCM的推送方式 </p>
+
       
     </div>
     
@@ -279,13 +314,13 @@
   
     
     <div class="copyright">
-        <p><span>本文标题:</span><a href="/2017/01/25/Gradle工具学习/"></a></p>
+        <p><span>本文标题:</span><a href="/2017/02/27/国外推送方案调研/">国外推送方案的调研</a></p>
         <p><span>文章作者:</span><a href="/" title="回到主页">他山之石</a></p>
-        <p><span>发布时间:</span>2017-01-25, 21:22:24</p>
-        <p><span>最后更新:</span>2017-01-25, 21:22:24</p>
+        <p><span>发布时间:</span>2017-02-27, 13:56:41</p>
+        <p><span>最后更新:</span>2017-02-27, 20:21:19</p>
         <p>
-            <span>原始链接:</span><a class="post-url" href="/2017/01/25/Gradle工具学习/" title="">http://yoursite.com/2017/01/25/Gradle工具学习/</a>
-            <span class="copy-path" data-clipboard-text="原文: http://yoursite.com/2017/01/25/Gradle工具学习/　　作者: 他山之石" title="点击复制文章链接"><i class="fa fa-clipboard"></i></span>
+            <span>原始链接:</span><a class="post-url" href="/2017/02/27/国外推送方案调研/" title="国外推送方案的调研">http://yoursite.com/2017/02/27/国外推送方案调研/</a>
+            <span class="copy-path" data-clipboard-text="原文: http://yoursite.com/2017/02/27/国外推送方案调研/　　作者: 他山之石" title="点击复制文章链接"><i class="fa fa-clipboard"></i></span>
             <script> var clipboard = new Clipboard('.copy-path'); </script>
         </p>
         <p>
@@ -297,16 +332,10 @@
 
     <nav id="article-nav">
         
-            <div id="article-nav-newer" class="article-nav-title">
-                <a href="/2017/01/29/Android动画学习/">
-                    Android动画学习
-                </a>
-            </div>
-        
         
             <div id="article-nav-older" class="article-nav-title">
-                <a href="/2017/01/22/开发经验/">
-                    开发经验汇总
+                <a href="/2017/02/12/关于项目中时间分配的问题/">
+                    关于项目中时间分配的问题
                 </a>
             </div>
         
@@ -354,7 +383,7 @@
         </div>
         <script>
             window._bd_share_config={
-                "common":{"bdSnsKey":{},"bdText":"　| Hexo　","bdMini":"2","bdMiniList":false,"bdPic":"","bdStyle":"0","bdSize":"24"},"share":{}};with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='http://bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)];
+                "common":{"bdSnsKey":{},"bdText":"国外推送方案的调研　| Hexo　","bdMini":"2","bdMiniList":false,"bdPic":"","bdStyle":"0","bdSize":"24"},"share":{}};with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='http://bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)];
         </script>
     
 
@@ -374,15 +403,13 @@
 
     <div class="scroll" id="post-nav-button">
         
-            <a href="/2017/01/29/Android动画学习/" title="上一篇: Android动画学习">
-                <i class="fa fa-angle-left"></i>
-            </a>
+            <a href="/" title="回到主页"><i class="fa fa-home"></i></a>
         
 
         <a title="文章列表"><i class="fa fa-bars"></i><i class="fa fa-times"></i></a>
 
         
-            <a href="/2017/01/22/开发经验/" title="下一篇: 开发经验汇总">
+            <a href="/2017/02/12/关于项目中时间分配的问题/" title="下一篇: 关于项目中时间分配的问题">
                 <i class="fa fa-angle-right"></i>
             </a>
         
