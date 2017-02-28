@@ -10,3 +10,12 @@ title:XXX
 设置标题 
 
 注意:别忘记 title: 冒号后面有空格 
+
+3.hexo博客如何插入图片:
+使用markdown语法: 
+(1) 使用本地路径：在hexo/source目录下新建一个img文件夹，将图片放入该文件夹下，插入图片时链接即为/img/图片名称。 
+(2) 使用微博图床，地址http://weibotuchuang.sinaapp.com/，将图片拖入区域中，会生成图片的URL，这就是链接地址。
+
+
+test: 
+![test](/img/test.png)
